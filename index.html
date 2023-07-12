@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Volume Calculator</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+    <form name="form1">
+  <div class="container">
+    <h2>VOLUME CALCULATOR</h2>
+    <label for="length">Length:</label>
+    <input type="number" id="length" min="0" step="any">
+    <br><br>
+    <label for="width">Width:</label>
+    <input type="number" id="width" min="0" step="any">
+    <br><br>
+    <label for="height">Height:</label>
+    <input type="number" id="height" min="0" step="any">
+    <br><br>
+    <!-- <button onclick="calculateVolume()">Calculate</button> -->
+    <input type="button" value="calculate" onclick="calculateVolume()">
+    <br><br>
+    <!-- <input type="text" id="result"> -->
+    <p id="result"></p>
+  </div>
+</form>
+  <script>
+    function calculateVolume() {
+      var length = parseFloat(document.getElementById('length').value);
+      var width = parseFloat(document.getElementById('width').value);
+      var height = parseFloat(document.getElementById('height').value);
+    //   var length = parseFloat(document.form1.length.value);
+    //   var width = parseFloat(document.form1.width.value);
+    //   var height = parseFloat(document.form1.height.value);
+      var volume = length * width * height;
+     
+      if (!isNaN(length) && !isNaN(width) && !isNaN(height)) {
+       
+        document.getElementById("result").textContent= volume.toFixed(2) ;
+      } else {
+        document.getElementById("result").innerHTML = 'Please enter valid dimensions.';
+      }
+    }
+</script>
+</body>
+</html>
